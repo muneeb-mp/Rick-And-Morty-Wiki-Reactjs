@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Cards.module.scss";
 import Status from "./Status";
 import Card from "./Card";
 

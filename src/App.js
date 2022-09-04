@@ -9,6 +9,7 @@ import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
 import Episodes from "./pages/Episodes";
 import Location from "./pages/Location";
+import CardDetails from "./components/Cards/CardDetails";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -21,8 +22,13 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/:id" element={<CardDetails />} />
+
         <Route exact path="/episodes" element={<Episodes />} />
+        <Route exact path="/episodes/:id" element={<CardDetails />} />
+
         <Route exact path="/location" element={<Location />} />
+        <Route exact path="/location/:id" element={<CardDetails />} />
       </Routes>
     </Router>
   );

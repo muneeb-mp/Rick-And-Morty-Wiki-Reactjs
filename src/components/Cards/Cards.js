@@ -1,8 +1,9 @@
 import React from "react";
 import Status from "./Status";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
-const Cards = ({ results }) => {
+const Cards = ({ results, page }) => {
   let display;
 
   if (results) {
@@ -10,10 +11,15 @@ const Cards = ({ results }) => {
       const { id, name, image, location, status } = card;
 
       return (
-        <div className="col-4 mb-4 position-relative" key={id}>
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`${page}${id}`}
+          key={id}
+          className="col-lg-4 col-md-6 col-12 mb-4 position-relative text-dark"
+        >
           <Card name={name} image={image} location={location} />
           <Status status={status} />
-        </div>
+        </Link>
       );
     });
   } else {

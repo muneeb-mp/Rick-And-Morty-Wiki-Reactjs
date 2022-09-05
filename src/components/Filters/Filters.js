@@ -9,14 +9,15 @@ const Filters = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
     setPageNumber("");
     setGender("");
     setSpecies("");
+    window.location.reload(false);
   };
 
   return (
-    <div className="col">
-      <div className="text-center fw-bold fs-4 mb-4">Filter</div>
+    <div className="col mb-5">
+      <div className="text-center fw-bold fs-4 mb-3">Filter</div>
       <div
         onClick={clear}
-        className="text-center text-decoration-underline"
+        className="text-center text-decoration-underline mb-3"
         style={{ cursor: "pointer" }}
       >
         Clear Filters
